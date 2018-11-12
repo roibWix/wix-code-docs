@@ -6,7 +6,7 @@
     { "filename": "index.js",
       "lineno": 12 },
   "docs":
-    { "summary": "An implementation of the standard [Javascript Fetch API](https://developer.mozilla.org/en/docs/Web/API/Fetch_API)\n which can be used in public and backend code for fetching resources\n from [3rd party services](https://support.wix.com/en/article/accessing-3rd-party-services)\n using HTTPS.",
+    { "summary": "This is a test submitted by Liran because he needs to check what the hell is going on with git submodules",
       "description":
         [ "To make a request, call the [fetch()](#fetch) function with the path to a",
           " resource and the optional [`WixFetchRequest`](#WixFetchRequest) options. The",
