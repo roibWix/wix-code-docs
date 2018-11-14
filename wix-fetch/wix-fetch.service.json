@@ -6,7 +6,7 @@
     { "filename": "index.js",
       "lineno": 12 },
   "docs":
-    { "summary": "This is a test2222 submitted by Liran because he needs to check what the hell is going on with git submodules",
+    { "summary": "This is a test3333 submitted by Liran because he needs to check what the hell is going on with git submodules",
       "description":
         [ "To make a request, call the [fetch()](#fetch) function with the path to a",
           " resource and the optional [`WixFetchRequest`](#WixFetchRequest) options. The",
