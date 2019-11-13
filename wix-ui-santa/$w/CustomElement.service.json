@@ -36,7 +36,8 @@
         {  } },
   "properties":
     [ { "name": "seoMarkup",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "string",
@@ -62,7 +63,7 @@
                       "  $w('#myCustomElement').setAttribute('isLoggedIn', wixUsers.currentUser.loggedIn);",
                       "",
                       "  // Handle an event on the custom element.  ",
-                      "  $w('#myCustomElement').on('my-event', console.log('The event triggered sucessfully.') );",
+                      "  $w('#myCustomElement').on('my-event', console.log('The event triggered successfully.') );",
                       "",
                       "  // Set the HTML content for SEO markup to be used by search engines",
                       "  $w('#myCustomElement').seoMarkup = '<div>logged in status</div>';",
@@ -110,7 +111,8 @@
               [ "It is the user's responsibility to handle all aspects of SEO for the element, including managing the validity of the \n SEO markup opposite search engines." ] } } ],
   "operations":
     [ { "name": "on",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventName",
@@ -149,7 +151,7 @@
                       "  $w('#myCustomElement').setAttribute('isLoggedIn', wixUsers.currentUser.loggedIn);",
                       "",
                       "  // Handle an event on the custom element.  ",
-                      "  $w('#myCustomElement').on('my-event', console.log('The event triggered sucessfully.') );",
+                      "  $w('#myCustomElement').on('my-event', console.log('The event triggered successfully.') );",
                       "",
                       "  // Set the HTML content for SEO markup to be used by search engines",
                       "  $w('#myCustomElement').seoMarkup = '<div>logged in status</div>';",
@@ -195,7 +197,8 @@
         "extra":
           {  } },
       { "name": "setAttribute",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "key",
@@ -231,7 +234,7 @@
                       "  $w('#myCustomElement').setAttribute('isLoggedIn', wixUsers.currentUser.loggedIn);",
                       "",
                       "  // Handle an event on the custom element.  ",
-                      "  $w('#myCustomElement').on('my-event', console.log('The event triggered sucessfully.') );",
+                      "  $w('#myCustomElement').on('my-event', console.log('The event triggered successfully.') );",
                       "",
                       "  // Set the HTML content for SEO markup to be used by search engines",
                       "  $w('#myCustomElement').seoMarkup = '<div>logged in status</div>';",
