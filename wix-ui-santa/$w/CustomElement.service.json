@@ -4,7 +4,7 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 5,
       "filename": "CustomElement.js" },
@@ -36,7 +36,8 @@
         {  } },
   "properties":
     [ { "name": "seoMarkup",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "string",
@@ -107,7 +108,7 @@
               {  } },
         "extra":
           { "notes":
-              [ "It is the user's responsibility to handle all aspects of SEO for the element, including managing the validity of the SEO markup opposite search engines." ] } } ],
+              [ "It is the user's responsibility to handle all aspects of SEO for the element, including managing the validity of the \n SEO markup opposite search engines." ] } } ],
   "operations":
     [ { "name": "on",
         "labels": [],
