@@ -29,15 +29,14 @@
           "",
           "",
           " + Custom elements are supported only for premium Wix users on sites with their own domain.",
-          " + Layout for custom elements might appear differently when viewing in the Editor, when previewing, and on the live site after publishing. Consider <a href=\"https://support.wix.com/en/article/about-release-candidate-versions\"  target=\"_blank\">`creating a release candidate</a> to check how the custom element site will look on the site after publishing." ],
+          " + Layout for custom elements might appear differently when viewing in the Editor, when previewing, and on the live site after publishing. Consider <a href=\"https://support.wix.com/en/article/about-release-candidate-versions\"  target=\"_blank\">creating a release candidate</a> to check how the custom element site will look on the site after publishing." ],
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "seoMarkup",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type": "string",
