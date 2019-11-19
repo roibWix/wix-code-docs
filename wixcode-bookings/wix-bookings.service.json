@@ -66,8 +66,7 @@
   "properties": [],
   "operations":
     [ { "name": "checkoutBooking",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "bookingInfo",
@@ -803,11 +802,11 @@
               "doc": "ID of the benefit provided by the plan package. For booking with package-type paid plans only.",
               "optional": true },
             { "name": "remainingCredits",
-              "type": "Value",
+              "type": "number",
               "doc": "Number of sessions remaining in the plan package. For booking with package-type paid plans only.",
               "optional": true },
             { "name": "totalCredits",
-              "type": "Value",
+              "type": "number",
               "doc": "Number of sessions initially provided with the plan package.  For booking with package-type paid plans only.",
               "optional": true },
             { "name": "planExpiration",
@@ -817,7 +816,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "CheckoutMethods",
         "locations":
           [ { "lineno": 145,
@@ -974,8 +973,7 @@
               "doc": "An object containing a list of the available payment options." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "FormField",
         "locations":
           [ { "lineno": 115,
