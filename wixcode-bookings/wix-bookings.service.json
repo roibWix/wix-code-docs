@@ -35,8 +35,10 @@
           " 1. Gather values for the selected service's form fields, if there are any.",
           "    The list of form fields is found in the **form** property of the items",
           "    in the **Bookings/Services** collection.",
-          " 1. Get values for the selected service's payment type options with the ",
+          " 1. Get the selected service's available payment type options with the ",
           "    [`getCheckoutOptions()`](#getCheckoutOptions) function.",
+          " 1. A payment option is selected (offline, online, paid plan package, or",
+          "    paid plan membership).",
           " 1. Call the [`checkoutBooking()`](#checkoutBooking) function. Pass the",
           "    selected slot object, the values for the form fields, and the payment type",
           "    if neccessary. Note, the specified payment type must match the service's",
@@ -83,7 +85,7 @@
                   [ "wix-bookings.BookingResult" ] },
             "doc": "Fulfilled - Results of the booking checkout." },
         "locations":
-          [ { "lineno": 194,
+          [ { "lineno": 196,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "Books a service and processes payment for the service.",
@@ -279,8 +281,7 @@
           { "notes":
               [ "You can checkout bookings for 1-on-1 Sessions (Appointments) from any type of Wix account.\n To checkout bookings for Ongoing Sessions (Classes) or a Set of Sessions (Courses) you need to\n <a href=\"https://support.wix.com/en/article/upgrading-wix-bookings\" target=\"_blank\">upgrade to a Business Premium Plan</a>." ] } },
       { "name": "getCheckoutOptions",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "slotId",
@@ -293,7 +294,7 @@
                   [ "wix-bookings.CheckoutOptions" ] },
             "doc": "Fulfilled - A list of available checkout options for the service.\nRejected - Checkout options error object." },
         "locations":
-          [ { "lineno": 314,
+          [ { "lineno": 316,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "Gets the valid checkout options for a service's slot.",
@@ -370,7 +371,7 @@
                   [ "wix-bookings.ServiceAvailability" ] },
             "doc": "Fulfilled - A list of available slots.\nRejected - Bookings error object." },
         "locations":
-          [ { "lineno": 262,
+          [ { "lineno": 264,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "Gets the available slots for a specific service.",
@@ -568,7 +569,7 @@
   "messages":
     [ { "name": "AvailabilityOptions",
         "locations":
-          [ { "lineno": 70,
+          [ { "lineno": 72,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object used when calling [`getServiceAvailability()`](#getServiceAvailability)\n containing options for which slots should be returned.",
@@ -628,7 +629,7 @@
         "labels": [] },
       { "name": "BookingInfo",
         "locations":
-          [ { "lineno": 105,
+          [ { "lineno": 107,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object used when calling [`checkoutBooking()`](#checkoutBooking)\n containing information about the slot to be booked.",
@@ -685,7 +686,7 @@
         "labels": [] },
       { "name": "BookingResult",
         "locations":
-          [ { "lineno": 161,
+          [ { "lineno": 163,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object representing the result of a call to [`checkoutBooking()`](#checkoutBooking).",
@@ -740,7 +741,7 @@
         "labels": [] },
       { "name": "CheckoutMethod",
         "locations":
-          [ { "lineno": 145,
+          [ { "lineno": 147,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An array used with [`CheckoutOptions`](#CheckoutOptions) that lists the available payment options for a service's slots.",
@@ -817,11 +818,10 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "CheckoutOptions",
         "locations":
-          [ { "lineno": 135,
+          [ { "lineno": 137,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object used when calling [`getCheckoutOptions()`](#getCheckoutOptions)\n containing information about the available payment options for a service's slot.",
@@ -915,7 +915,7 @@
         "labels": [] },
       { "name": "FormField",
         "locations":
-          [ { "lineno": 115,
+          [ { "lineno": 117,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object used when calling [`checkoutBooking()`](#checkoutBooking)\n containing values for form fields required to book the session.",
@@ -1245,7 +1245,7 @@
           [ "removed" ] },
       { "name": "PaymentOptions",
         "locations":
-          [ { "lineno": 124,
+          [ { "lineno": 126,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object used when calling [`checkoutBooking()`](#checkoutBooking)\n containing information about the payment options.",
@@ -1339,7 +1339,7 @@
         "labels": [] },
       { "name": "ServiceAvailability",
         "locations":
-          [ { "lineno": 82,
+          [ { "lineno": 84,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object returned from [`getServiceAvailability()`](#getServiceAvailability)\n containing the available bookings slots.",
@@ -1386,7 +1386,7 @@
         "labels": [] },
       { "name": "Slot",
         "locations":
-          [ { "lineno": 90,
+          [ { "lineno": 92,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object representing a booking slot.",
