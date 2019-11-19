@@ -66,8 +66,7 @@
   "properties": [],
   "operations":
     [ { "name": "checkoutBooking",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "bookingInfo",
@@ -280,8 +279,7 @@
           { "notes":
               [ "You can checkout bookings for 1-on-1 Sessions (Appointments) from any type of Wix account.\n To checkout bookings for Ongoing Sessions (Classes) or a Set of Sessions (Courses) you need to\n <a href=\"https://support.wix.com/en/article/upgrading-wix-bookings\" target=\"_blank\">upgrade to a Business Premium Plan</a>." ] } },
       { "name": "getCheckoutOptions",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "slotId",
@@ -353,8 +351,7 @@
         "extra":
           {  } },
       { "name": "getServiceAvailability",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "serviceId",
@@ -788,8 +785,7 @@
               "doc": "ID of the form field from the **form** property in the **Booking/Sessions** collection." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "MembershipPayment",
         "locations":
           [ { "lineno": 137,
@@ -854,8 +850,7 @@
               "doc": "ID of the benefit provided by the plan membership." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "PackagePayment",
         "locations":
           [ { "lineno": 148,
@@ -919,9 +914,6 @@
               "type": "benefitId",
               "doc": "ID of the benefit provided by the plan package." },
             { "name": "value",
-              "type": "remainingCredits",
-              "doc": "Number sessions remaining in the plan package." },
-            { "name": "value",
               "type": "totalCredits",
               "doc": "Number of sessions initially provided with the plan package." },
             { "name": "date",
@@ -930,7 +922,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "PaymentOptions",
         "locations":
           [ { "lineno": 124,
@@ -1036,8 +1028,7 @@
               "doc": "Payment information using a paid plan package." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "ServiceAvailability",
         "locations":
           [ { "lineno": 82,
