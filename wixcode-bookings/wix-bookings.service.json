@@ -66,7 +66,8 @@
   "properties": [],
   "operations":
     [ { "name": "checkoutBooking",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "bookingInfo",
@@ -83,7 +84,7 @@
                   [ "wix-bookings.BookingResult" ] },
             "doc": "Fulfilled - Results of the booking checkout." },
         "locations":
-          [ { "lineno": 212,
+          [ { "lineno": 194,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "Books a service and processes payment for the service.",
@@ -272,7 +273,7 @@
                       "}",
                       "" ],
                   "extra":
-                    { "description": "This examples demonstrates a simple bookings scenario. In the interest of\n simplicity the code does not deal with display considerations or validations\n that would normally be required to make sure users perform the flow as\n intended.\n The code assumes a page with the following elements:\n\n + `serviceRepeater`: Displays the services that can be booked. The\n   elements in the repeater match the information we want to display\n   for each service.\n + `slotRepeater`: Displays the slots that are available for the selected\n   service. The elements in the repeater match the information we want to\n   display for each slot.\n + `formFieldRepeater`: Contains input fields for collecting form field values\n   needed to book the selected service. Each item contains one input element.\n + `bookButton`: Perfoms a booking checkout after a service and slot are selected\n   and the form fields have been entered." } } ],
+                    { "description": "This example demonstrates a simple bookings scenario. In the interest of\n simplicity the code does not deal with display considerations or validations\n that would normally be required to make sure users perform the flow as\n intended.\n The code assumes a page with the following elements:\n\n + `serviceRepeater`: Displays the services that can be booked. The\n   elements in the repeater match the information we want to display\n   for each service.\n + `slotRepeater`: Displays the slots that are available for the selected\n   service. The elements in the repeater match the information we want to\n   display for each slot.\n + `formFieldRepeater`: Contains input fields for collecting form field values\n   needed to book the selected service. Each item contains one input element.\n + `bookButton`: Perfoms a booking checkout after a service and slot are selected\n   and the form fields have been entered." } } ],
             "extra":
               {  } },
         "extra":
@@ -292,7 +293,7 @@
                   [ "wix-bookings.CheckoutOptions" ] },
             "doc": "Fulfilled - A list of available checkout options for the service.\nRejected - Checkout options error object." },
         "locations":
-          [ { "lineno": 335,
+          [ { "lineno": 314,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "Gets the valid checkout options for a service's slot.",
@@ -368,7 +369,7 @@
                   [ "wix-bookings.ServiceAvailability" ] },
             "doc": "Fulfilled - A list of available slots.\nRejected - Bookings error object." },
         "locations":
-          [ { "lineno": 280,
+          [ { "lineno": 262,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "Gets the available slots for a specific service.",
@@ -683,7 +684,7 @@
         "labels": [] },
       { "name": "BookingResult",
         "locations":
-          [ { "lineno": 182,
+          [ { "lineno": 161,
               "filename": "bookings.js" } ],
         "docs":
           { "summary": "An object representing the result of a call to [`checkoutBooking()`](#checkoutBooking).",
@@ -736,6 +737,87 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "CheckoutMethod",
+        "locations":
+          [ { "lineno": 145,
+              "filename": "bookings.js" } ],
+        "docs":
+          { "summary": "An array used with [`CheckoutOptions`] that lists the available payment options for a service's slots.",
+            "links": [],
+            "examples":
+              [ { "title": "Book a service with the paid plan payment option",
+                  "body":
+                    [ "import wixBookings from 'wix-bookings';",
+                      "",
+                      "// ...",
+                      "",
+                      "let chosenSlot = // get chosen slot",
+                      "",
+                      "let formFieldValues = [",
+                      "  {",
+                      "    \"_id\": \"20657271-c55f-43d6-adfd-39b7acc38e11\", // name field ID",
+                      "    \"value\": \"John Doe\"",
+                      "  }, {",
+                      "    \"_id\": \"87edd4e0-42b1-4802-8766-584f3eeb6436\", // email field ID",
+                      "    \"value\": \"john@doe.com\"",
+                      "  }",
+                      "];",
+                      "",
+                      "let bookingInfo = {",
+                      "  \"slot\": chosenSlot,",
+                      "  \"formFields\": formFieldValues",
+                      "};",
+                      "",
+                      "let options = {",
+                      "  \"paymentType\": \"package\",",
+                      "  \"paidPlan\": {",
+                      "    \"planOrderId\": 'SomePlanID',",
+                      "    \"benefitId\": 'SomeBenefitID',",
+                      "  },",
+                      "  \"couponCode\": \"thecouponcode\"",
+                      "}",
+                      "",
+                      "wixBookings.checkoutBooking(bookingInfo, options)",
+                      "  .then( (results) => {",
+                      "    let id = results.bookingId;",
+                      "    let status = results.status;",
+                      "  } );" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "type",
+              "type": "string",
+              "doc": "Type of the available payment option. Valid options are `\"wixPay_Online\"`\n for online collections, `\"wixPay_Offline\"` for offline collections, `\"package\"` for a package-type paid plan, \n or `\"membership\"` for a membership-type paid plan." },
+            { "name": "planName",
+              "type": "string",
+              "doc": "Name of the plan package or membership. For booking with paid plans only.",
+              "optional": true },
+            { "name": "planOrderId",
+              "type": "string",
+              "doc": "Order ID of the plan package or membership. For booking with paid plans only.",
+              "optional": true },
+            { "name": "benefitId",
+              "type": "string",
+              "doc": "ID of the benefit provided by the plan package. For booking with package-type paid plans only.",
+              "optional": true },
+            { "name": "remainingCredits",
+              "type": "Value",
+              "doc": "Number of sessions remaining in the plan package. For booking with package-type paid plans only.",
+              "optional": true },
+            { "name": "totalCredits",
+              "type": "Value",
+              "doc": "Number of sessions initially provided with the plan package.  For booking with package-type paid plans only.",
+              "optional": true },
+            { "name": "planExpiration",
+              "type": "Date",
+              "doc": "Date by which the plan package or membership expires. For booking with paid plans only.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "CheckoutMethods",
         "locations":
           [ { "lineno": 145,
@@ -798,7 +880,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "removed" ] },
       { "name": "CheckoutOptions",
         "locations":
           [ { "lineno": 135,
@@ -884,16 +966,16 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "checkoutMethods",
+          [ { "name": "checkoutMethod",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "wix-bookings.CheckoutMethods" ] },
-              "doc": "An object containing a list of the available payment option types." } ],
+                    [ "wix-bookings.CheckoutMethod" ] },
+              "doc": "An object containing a list of the available payment options." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "FormField",
         "locations":
           [ { "lineno": 115,
@@ -1075,7 +1157,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "removed" ] },
       { "name": "PackagePayment",
         "locations":
           [ { "lineno": 148,
@@ -1223,7 +1305,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "removed" ] },
       { "name": "PaymentOptions",
         "locations":
           [ { "lineno": 124,
@@ -1317,8 +1399,7 @@
               "doc": "A coupon code to be used with the payment." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "ServiceAvailability",
         "locations":
           [ { "lineno": 82,
