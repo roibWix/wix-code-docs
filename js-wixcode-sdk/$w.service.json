@@ -167,7 +167,7 @@
                 "",
                 "",
                 "",
-                " ####Preventing duplicate \"side effects\" from occurring when onReady() runs both server-side and client-side",
+                " ###__Preventing duplicate \"side effects\" from occurring when onReady() runs both server-side and client-side__",
                 "",
                 " The `onReady()` event handler may be called twice during the page rendering",
                 " process, once server-side and once client-side.",
