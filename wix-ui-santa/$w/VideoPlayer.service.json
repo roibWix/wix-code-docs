@@ -3,7 +3,8 @@
   "mixes":
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 8,
       "filename": "VideoPlayer.js" },
@@ -270,7 +271,8 @@
               [ "The actual volume heard by a site visitor depends on the value of the\n `volume` property and the volume settings on the visitor's device." ] } } ],
   "operations":
     [ { "name": "mute",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -280,7 +282,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the volume has been muted." },
         "locations":
-          [ { "lineno": 536,
+          [ { "lineno": 541,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Mutes video volume.",
@@ -289,6 +291,14 @@
               [ { "title": "Mute volume",
                   "body":
                     [ "$w(\"#myVideoPlayer\").mute();" ],
+                  "extra":
+                    {  } },
+                { "title": "Mute volume and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").mute()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with mute\");",
+                      "  } );" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -306,7 +316,7 @@
           { "type": "$w.VideoPlayer",
             "doc": "The video player that triggered the event." },
         "locations":
-          [ { "lineno": 682,
+          [ { "lineno": 690,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when playback has ended.",
@@ -336,7 +346,7 @@
           { "type": "$w.VideoPlayer",
             "doc": "The video player that triggered the event." },
         "locations":
-          [ { "lineno": 643,
+          [ { "lineno": 651,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when playback is paused.",
@@ -368,7 +378,7 @@
           { "type": "$w.VideoPlayer",
             "doc": "The video player that triggered the event." },
         "locations":
-          [ { "lineno": 604,
+          [ { "lineno": 612,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when playback is started or restarted.",
@@ -399,7 +409,7 @@
         "ret":
           { "type": "$w.VideoPlayer" },
         "locations":
-          [ { "lineno": 719,
+          [ { "lineno": 727,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when playback progresses.",
@@ -412,7 +422,8 @@
         "extra":
           { "eventType": "onProgress" } },
       { "name": "pause",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -422,7 +433,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When playback has been paused." },
         "locations":
-          [ { "lineno": 456,
+          [ { "lineno": 457,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Pauses playback.",
@@ -437,13 +448,22 @@
                   "body":
                     [ "$w(\"#myVideoPlayer\").pause();" ],
                   "extra":
+                    {  } },
+                { "title": "Pause playback and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").pause()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with pause\");",
+                      "  } );" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "play",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -468,13 +488,22 @@
                   "body":
                     [ "$w(\"#myVideoPlayer\").play();" ],
                   "extra":
+                    {  } },
+                { "title": "Begin or resume playback and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").play()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with play\");",
+                      "  } );" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "seek",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -484,7 +513,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the playback has been moved to the specified time." },
         "locations":
-          [ { "lineno": 574,
+          [ { "lineno": 581,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Moves playback to the specified time, in seconds.",
@@ -494,13 +523,22 @@
                   "body":
                     [ "$w(\"#myVideoPlayer\").seek(102);" ],
                   "extra":
+                    {  } },
+                { "title": "Move playback and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").seek(102)",
+                      "  .then( () => {",
+                      "    console.log(\"Done with seek\");",
+                      "  } );" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "stop",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -510,12 +548,13 @@
                   [ "void" ] },
             "doc": "Fulfilled - When playback has been stopped." },
         "locations":
-          [ { "lineno": 480,
+          [ { "lineno": 482,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Pauses playback.",
             "description":
-              [ "The `stop()` function stops the current video and fires a `pause` event.",
+              [ "The `stop()` function stops the current playback,",
+                " moves to the beginning of the video, and fires a `pause` event.",
                 "",
                 " The `pause` event handlers set on the video player by the [onPause( )](#onPause)",
                 " function or in the Editor are called." ],
@@ -525,6 +564,14 @@
                   "body":
                     [ "$w(\"#myVideoPlayer\").stop();" ],
                   "extra":
+                    {  } },
+                { "title": "Stop playback and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").stop()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with stop\");",
+                      "  } );" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
@@ -532,7 +579,8 @@
           { "notes":
               [ "The `stop()` function does not work when a video player is presenting a\n video from Dailymotion, Facebook, or Twitch." ] } },
       { "name": "togglePlay",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -542,7 +590,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When playback has been toggled." },
         "locations":
-          [ { "lineno": 507,
+          [ { "lineno": 511,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Toggles playback.",
@@ -562,13 +610,22 @@
                   "body":
                     [ "$w(\"#myVideoPlayer\").togglePlay();" ],
                   "extra":
+                    {  } },
+                { "title": "Toggle playback and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").togglePlay()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with toggle play\");",
+                      "  } );" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "unmute",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -578,7 +635,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the volume has been unmuted." },
         "locations":
-          [ { "lineno": 555,
+          [ { "lineno": 561,
               "filename": "VideoPlayer.js" } ],
         "docs":
           { "summary": "Unmutes video volume.",
@@ -587,6 +644,14 @@
               [ { "title": "Unmute volume",
                   "body":
                     [ "$w(\"#myVideoPlayer\").unmute();" ],
+                  "extra":
+                    {  } },
+                { "title": "Unmute volume and log a message when done",
+                  "body":
+                    [ "$w(\"#myVideoPlayer\").unmute()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with unmute\");",
+                      "  } );" ],
                   "extra":
                     {  } } ],
             "extra":
