@@ -49,8 +49,7 @@
         "extra":
           {  } },
       { "name": "description",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -139,7 +138,7 @@
           {  } },
       { "name": "poster",
         "labels":
-          [ "new" ],
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -168,12 +167,12 @@
               [ { "title": "Get the current video's poster",
                   "body":
                     [ "let videoPoster = $w(\"#myVideoPlayer\").poster;",
-                      "// \"wix:image://v1/11062b_7124ff06fc56498d96722413f5f4846ff000.jpg/_.jpg#originWidth=1920&originHeight=1080\"" ],
+                      "// \"wix:image://v1/11062b_7124ff06fc5649f5f4846ff000.jpg/_.jpg#originWidth=1920&originHeight=1080\"" ],
                   "extra":
                     {  } },
                 { "title": "Set the current video's poster to an image from the Media Manager",
                   "body":
-                    [ "$w(\"#myVideoPlayer\").poster = \"wix:image://v1/11062b_7124ff06fc56498d96722413f5f4846ff000.jpg/_.jpg#originWidth=1920&originHeight=1080\";" ],
+                    [ "$w(\"#myVideoPlayer\").poster = \"wix:image://v1/11062b_7124ff06fc56495f4846ff000.jpg/_.jpg#originWidth=1920&originHeight=1080\";" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -181,8 +180,7 @@
         "extra":
           {  } },
       { "name": "src",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
