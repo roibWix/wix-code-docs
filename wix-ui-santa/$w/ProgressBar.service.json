@@ -5,7 +5,8 @@
       "$w.HiddenCollapsedMixin",
       "$w.StyleMixin" ],
   "labels":
-    [ "changed" ],
+    [ "changed",
+      "removed" ],
   "location":
     { "lineno": 17,
       "filename": "ProgressBar.js" },
