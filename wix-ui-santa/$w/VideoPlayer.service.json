@@ -48,25 +48,6 @@
               {  } },
         "extra":
           {  } },
-      { "name": "description",
-        "labels": [],
-        "get": true,
-        "set": true,
-        "type": "string",
-        "locations":
-          [ { "lineno": 75,
-              "filename": "VideoPlayer.js" },
-            { "lineno": 98,
-              "filename": "VideoPlayer.js" } ],
-        "docs":
-          { "summary": "Sets or gets the description of a video.",
-            "links": [],
-            "examples": [],
-            "extra":
-              {  } },
-        "extra":
-          { "notes":
-              [ "Setting a video description only works when a video player is presenting a\n video uploaded to your site.\n\n Getting a video description does not work when a video player is presenting a\n video from Facebook, Twitch, or YouTube." ] } },
       { "name": "duration",
         "labels": [],
         "get": true,
