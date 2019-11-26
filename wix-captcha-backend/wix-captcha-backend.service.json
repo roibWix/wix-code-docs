@@ -76,7 +76,7 @@
                       "        .then( () => ({\"type\": \"success\"}))",
                       "        .catch( (error) => ({\"type\": \"insertion error\", \"message\": \"Error: collection insertion failed: \" + error}));",
                       "    })",
-                      "    .catch( (error) => ({\"type\": \"authorization error\", \"message\": \"Error: reCAPTCHA authorization failed: \" + error}));",
+                      "    .catch( (error) => ({\"type\": \"authorization error\", \"message\": \"Error: CAPTCHA authorization failed: \" + error}));",
                       "}",
                       "",
                       "/********************",
@@ -239,8 +239,7 @@
               "doc": "Error message." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "SuccessReport",
         "locations":
           [ { "lineno": 42,
@@ -291,7 +290,6 @@
               "doc": "Value is `true` when authorization is successful." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] } ],
+        "labels": [] } ],
   "extra":
     {  } }
