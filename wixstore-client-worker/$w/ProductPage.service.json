@@ -16,7 +16,29 @@
         {  } },
   "properties": [],
   "operations":
-    [ { "name": "getProduct",
+    [ { "name": "getCustomTextFieldsValues",
+        "labels":
+          [ "new" ],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type": "$w.ProductPage.StoreProduct",
+            "doc": "The value's entered in the custom text fields." },
+        "locations":
+          [ { "lineno": 183,
+              "filename": "wixCodeDoc.js" } ],
+        "docs":
+          { "summary": "Gets the values entered in the product's custom text fields.",
+            "description":
+              [ "Custom text fields are fields <a href=\"https://support.wix.com/en/article/adding-a-customer-message-box-to-your-wix-stores-product-page\" target=\"_blank\">you add to a product</a> that ",
+                " are typically used to collect product customization information from you customers." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "getProduct",
         "labels": [],
         "nameParams": [],
         "params": [],
@@ -391,8 +413,7 @@
               "doc": "Product variants." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "StoreProductAdditionalInfoSection",
         "locations":
           [ { "lineno": 20,
@@ -430,11 +451,11 @@
         "members":
           [ { "name": "optionKey",
               "type": "string",
-              "doc": "Value of the choice. This key name is dependent on the product\noption. For example, if a product has a size\noption, this key value will be something like `\"Size\"` and\nits value will be something like `\"Large\"`." } ],
+              "doc": "Value of the choice. This key name is dependent on the\n product option. For example, if a product has a size option, this\n key value will be something like `\"Size\"` and its value will be something like\n `\"Large\"`." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "StoreProductCustomTextFields",
         "locations":
           [ { "lineno": 70,
@@ -478,8 +499,7 @@
               "doc": "Discount value." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "StoreProductOption",
         "locations":
           [ { "lineno": 60,
@@ -507,8 +527,7 @@
               "doc": "Option choices." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "StoreProductOptions",
         "locations":
           [ { "lineno": 50,
@@ -524,7 +543,7 @@
         "members":
           [ { "name": "optionKey",
               "type": "$w.ProductPage.StoreProductOption",
-              "doc": "Name of the option. This key name is dependent on the\noptions added to the product. For example, if a product\nhas a size option, this key will be something like\n`\"Size\"`." } ],
+              "doc": "Name of the option. This key name\n is dependent on the options added to the product. For example, if a product has a size \n option, this key will be something like `\"Size\"`." } ],
         "extra":
           {  },
         "labels":
@@ -559,8 +578,7 @@
               "doc": "Indicates whether the product with this option is visible." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "StoreProductOptionsChoiceMedia",
         "locations":
           [ { "lineno": 41,
@@ -588,8 +606,7 @@
               "doc": "List of choice media items." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "StoreProductRibbon",
         "locations":
           [ { "lineno": 12,
@@ -695,7 +712,6 @@
               "doc": "Variant items." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] } ],
+        "labels": [] } ],
   "extra":
     {  } }
