@@ -8,7 +8,7 @@
       "$w.StyleMixin",
       "$w.RequiredMixin" ],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 38,
       "filename": "SelectionTagsList.js" },
@@ -21,13 +21,34 @@
       "extra":
         {  } },
   "properties":
-    [ { "name": "style",
+    [ { "name": "options",
+        "labels":
+          [ "new" ],
+        "get": true,
+        "set": false,
+        "type": "Array",
+        "locations":
+          [ { "lineno": 55,
+              "filename": "SelectionTagsList.js" } ],
+        "docs":
+          { "summary": "* Sets or gets list of items which will be rendered as tags.",
+            "description":
+              [ "Setting the `options` property sets all the options available to a user.",
+                "",
+                " Getting the `options` property returns the current list of options available to a user." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "style",
         "labels": [],
         "get": true,
         "set": false,
         "type": "$w.Style",
         "locations":
-          [ { "lineno": 176,
+          [ { "lineno": 177,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Gets an object containing information about the SelectionTagsList styles.",
