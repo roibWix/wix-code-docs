@@ -5,7 +5,7 @@
       "$w.FocusMixin",
       "$w.HiddenCollapsedMixin" ],
   "labels":
-    [ "new" ],
+    [ "removed" ],
   "location":
     { "lineno": 8,
       "filename": "Captcha.js" },
