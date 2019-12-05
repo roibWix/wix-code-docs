@@ -1,0 +1,125 @@
+{ "name": "wix-blocks",
+  "mixes": [],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "widget.js" },
+  "docs":
+    { "summary": "Manages events, properties, and functions in Wix Blocks widgets.",
+      "description":
+        [ "You can add to Wix Blocks widget functionality using the $widget API. The Widget API includes a single object and two methods, which are described on this page. You can also use the Widget API to expose properties,",
+          "events, and functions in the Wix Editor. This API can only be used in front-end code. You do not have to import the API into Wix Blocks." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "props",
+        "labels": [],
+        "get": true,
+        "set": false,
+        "type": "Object",
+        "locations":
+          [ { "lineno": 9,
+              "filename": "widget.js" } ],
+        "docs":
+          { "summary": "Read-only object that contains the properties you add to the widget.",
+            "description":
+              [ "(properties) contains the properties created by the widget designer, which determine the structure of the object." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations":
+    [ { "name": "fireEvent",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "eventName",
+              "type": "string",
+              "doc": "The name of the event." },
+            { "name": "eventData",
+              "type": "Object",
+              "doc": "The data passed by the event" } ],
+        "ret":
+          { "type": "Void" },
+        "locations":
+          [ { "lineno": 17,
+              "filename": "widget.js" } ],
+        "docs":
+          { "summary": "Fires the event that the widget designer added.",
+            "description":
+              [ "The event can pass data from the widget to be used in your code. Any code on the site that has this widget installed and that listens for this event will be triggered." ],
+            "links": [],
+            "examples":
+              [ { "title": "undefined",
+                  "body":
+                    [ "//When the counter counts down to zero days fire the dayZero event",
+                      "if (days === 0) {",
+                      "\t\t$widget.fireEvent('dayZero')",
+                      "\t}" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "onPropsChanged",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "handler",
+              "type": "wix-blocks.PropsChangeHandler",
+              "doc": "The function that runs when the properties change." } ],
+        "ret":
+          { "type": "Void" },
+        "locations":
+          [ { "lineno": 30,
+              "filename": "widget.js" } ],
+        "docs":
+          { "summary": "Adds a handler that runs when the widget's properties change.",
+            "links": [],
+            "examples":
+              [ { "title": "undefined",
+                  "body":
+                    [ "onPropsChanged(handler: ChangeHandler)",
+                      "callback PropsChangeHandler(oldProps, newProps)",
+                      "$widget.onPropsChanged((oldProps, newProps) => {",
+                      "//code what you want to happen",
+                      "})" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks":
+    [ { "name": "PropsChangeHandler",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "oldProps",
+              "type": "Object",
+              "doc": "The old properties." },
+            { "name": "newProps",
+              "type": "Object",
+              "doc": "The new properties." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 40,
+              "filename": "widget.js" } ],
+        "docs":
+          { "summary": "Handles changes made to widget properties.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "messages": [],
+  "extra":
+    {  } }
