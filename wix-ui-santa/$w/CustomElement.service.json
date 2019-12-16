@@ -28,10 +28,11 @@
           "",
           " 1. Code the custom element and its behavior in a JavaScript file using any IDE. ",
           " 1. In the Wix Editor's Add panel, <a href=\"https://support.wix.com/en/article/adding-a-custom-element-to-your-site\"  target=\"_blank\">add a custom element to the site</a>. In Settings,",
-          "    connect the custom element's code to the custom element added to your page on the site.",
+          "    connect the custom element's code to the custom element added to your page on the site. ",
+          "    ![tag-name](images/customElement_tag.png \"Tag Name\") ",
           " 1. Using Corvid, set up interactions between your site and the custom element. You can code event handling and additional functionality for the custom element. ",
           "",
-          "You can also use Corvid for SEO support on custom elements. See [`seoMarkup`](https://www.wix.com/corvid/reference/$w.CustomElement.html#seoMarkup).",
+          "You can also define [`seoMarkup`](https://www.wix.com/corvid/reference/$w.CustomElement.html#seoMarkup) for SEO support on custom elements.",
           "",
           "   ",
           " <h3 id=\"custom-element-limitations\">Limitations</h3>",
@@ -46,12 +47,13 @@
         {  } },
   "properties":
     [ { "name": "seoMarkup",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 104,
+          [ { "lineno": 105,
               "filename": "CustomElement.js" } ],
         "docs":
           { "summary": "Sets or gets the SEO markup to be rendered for search engine bots.",
@@ -61,35 +63,27 @@
                 " If you do not add the equivalent HTML of the custom element's implementation using this SEO markup property, only bots that index JavaScript, such as Google, will be able to index the custom element's content/markup for search engine results." ],
             "links": [],
             "examples":
-              [ { "title": "Set SEO markup for custom element",
+              [ { "title": "Set SEO markup for the custom element",
                   "body":
                     [ "// **********************************************",
                       "// Custom Element Code in Corvid ",
                       "// **********************************************",
                       "",
-                      "$w('#myCustomElement').seoMarkup = 'Hello world!';",
+                      "// Set the HTML content for SEO markup to be used by search engines.",
+                      "// Make sure the SEO markup matches the contents of the custom",
+                      "// element exactly so as not to mislead web crawlers.",
+                      "$w('#myCustomElement').seoMarkup = 'Hello World!';",
+                      "",
                       "",
                       "// **********************************************",
                       "// Custom Element Implementation on an HTML Page",
                       "// **********************************************",
                       "",
                       "class MyElement extends HTMLElement {",
-                      "",
-                      "  // Define a special callback function that runs when ",
-                      "  // the custom element is connected initially to the DOM. ",
                       "  connectedCallback() {",
-                      "",
-                      "    this.innerHTML = 'Hello world!'",
-                      "",
-                      "    // Trigger an event that Corvid can watch for and handle ",
-                      "    // using the [`on`](https://www.wix.com/corvid/reference/$w.IFrame.html#global) function.",
-                      "    this.dispatchEvent(new CustomEvent('my-event')",
+                      "    this.innerHTML = 'Hello World!'",
                       "  }",
                       "}",
-                      "",
-                      "// Register the custom element. The name \"my-custom-element\" is the ",
-                      "// tag name to specify when adding the custom element in the Wix ",
-                      "// Editor to the site.",
                       "customElements.define('my-custom-element', MyElement);",
                       "  ",
                       "",
@@ -106,7 +100,8 @@
               [ "It is the user's responsibility to handle all aspects of SEO for the element, including managing the validity of the \n SEO markup opposite search engines." ] } } ],
   "operations":
     [ { "name": "on",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventName",
@@ -119,7 +114,7 @@
           { "type": "$w.CustomElement",
             "doc": "The custom element." },
         "locations":
-          [ { "lineno": 73,
+          [ { "lineno": 74,
               "filename": "CustomElement.js" } ],
         "docs":
           { "summary": "Registers a callback function in Corvid for an event triggered from the custom element.",
@@ -149,10 +144,10 @@
                       "",
                       "class MyElement extends HTMLElement {",
                       "  connectedCallback() {",
-                      "    this.innerHTML = 'Hello world!'",
+                      "    this.innerHTML = 'Hello World!'",
                       "",
                       "    // Trigger an event that Corvid can watch for and handle ",
-                      "    // using the [`on`](https://www.wix.com/corvid/reference/$w.IFrame.html#global) function.",
+                      "    // using the [`on()`] function.",
                       "    this.dispatchEvent(new CustomEvent('my-event')",
                       "  }",
                       "}",
@@ -339,7 +334,8 @@
         "extra":
           {  } },
       { "name": "setAttribute",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "key",
@@ -351,7 +347,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 48,
+          [ { "lineno": 49,
               "filename": "CustomElement.js" } ],
         "docs":
           { "summary": "Sets an HTML attribute on the custom element's DOM node.",
@@ -383,7 +379,7 @@
                       "class MyElement extends HTMLElement {",
                       "",
                       "  connectedCallback() {",
-                      "    this.innerHTML = 'Hello world!'",
+                      "    this.innerHTML = 'Hello World!'",
                       "    this.dispatchEvent(new CustomEvent('my-event')",
                       "  }",
                       "}",
