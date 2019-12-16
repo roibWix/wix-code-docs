@@ -3,7 +3,8 @@
   "mixes":
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 5,
       "filename": "CustomElement.js" },
@@ -51,7 +52,7 @@
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 105,
+          [ { "lineno": 104,
               "filename": "CustomElement.js" } ],
         "docs":
           { "summary": "Sets or gets the SEO markup to be rendered for search engine bots.",
@@ -102,7 +103,8 @@
               [ "It is the user's responsibility to handle all aspects of SEO for the element, including managing the validity of the \n SEO markup opposite search engines." ] } } ],
   "operations":
     [ { "name": "on",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventName",
@@ -112,8 +114,7 @@
               "type": "Function",
               "doc": "The callback function to run when the event is triggered." } ],
         "ret":
-          { "type": "$w.CustomElement",
-            "doc": "The custom element." },
+          { "type": "void" },
         "locations":
           [ { "lineno": 74,
               "filename": "CustomElement.js" } ],
