@@ -15,13 +15,13 @@
           " hosted by Wix or hosted on a server that is external to Wix.  The custom element is defined using ",
           " the standard ECMAScript 2015 class syntax. ",
           "",
-          "This reference provides basic instructions for creating custom elements. ",
+          "This reference focuses on how you can use Corvid to interact with custom elements. This reference provides only basic instructions for actually creating custom elements. For complete instructions and examples, see <a href=\"https://developer.mozilla.org/en-US/docs/Web/Web_Components\"  target=\"_blank\">MDN documentation</a>. ",
           "",
-          "+ For complete instructions and examples, see <a href=\"https://developer.mozilla.org/en-US/docs/Web/Web_Components\"  target=\"_blank\">MDN documentation</a>. ",
-          "+ For an article on using custom elements with Corvid, see <a href=\"https://support.wix.com/en/article/corvid-creating-your-own-custom-elements\" target=\"_blank\">this article</a>. ",
-          "+ For a FAQ, see <a href=\"https://support.wix.com/en/article/custom-element-faqs\" target=\"_blank\">this article</a>. ",
+          "+ <a href=\"https://support.wix.com/en/article/corvid-creating-your-own-custom-elements\" target=\"_blank\">Learn more</a> about using custom elements with Corvid.",
+          "+ <a href=\"https://support.wix.com/en/article/custom-element-faqs\" target=\"_blank\">This FAQ</a> provides more information including some technical tips for getting started. ",
           "",
           "",
+          " <h3 id=\"custom-element-lifecycle\">Custom Element Lifecycle with Corvid</h3>",
           "",
           " The general flow for working with custom elements and Corvid is: ",
           "",
@@ -34,19 +34,19 @@
           "You can also use Corvid for SEO support on custom elements. See [`seoMarkup`](https://www.wix.com/corvid/reference/$w.CustomElement.html#seoMarkup).",
           "",
           "   ",
-          " Limitations",
+          " <h3 id=\"custom-element-limitations\">Limitations</h3>",
           "",
           "",
           " + Custom elements are supported only for <a href=\"https://support.wix.com/en/article/upgrading-your-site-to-premium-3066683\"  target=\"_blank\">premium Wix users on sites with their own domain and with Wix ads removed</a>.",
-          " + Layout for custom elements might appear differently when viewing in the Editor, when previewing, and on the live site after publishing. Consider <a href=\"https://support.wix.com/en/article/about-release-candidate-versions\"  target=\"_blank\">creating a release candidate</a> to check how the custom element will look on the site after publishing." ],
+          " + Layout for custom elements might appear differently when viewing in the Editor, when previewing, and on the live site after publishing. Consider <a href=\"https://support.wix.com/en/article/about-release-candidate-versions\"  target=\"_blank\">creating a release candidate</a> to check how the custom element will look on the site after publishing.",
+          " + See <a href=\"https://support.wix.com/en/article/custom-element-faqs\" target=\"_blank\">this FAQ</a> for more prerequisites and limitations." ],
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "seoMarkup",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type": "string",
@@ -106,8 +106,7 @@
               [ "It is the user's responsibility to handle all aspects of SEO for the element, including managing the validity of the \n SEO markup opposite search engines." ] } } ],
   "operations":
     [ { "name": "on",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "eventName",
@@ -340,8 +339,7 @@
         "extra":
           {  } },
       { "name": "setAttribute",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "key",
