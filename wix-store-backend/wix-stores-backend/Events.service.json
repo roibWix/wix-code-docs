@@ -50,7 +50,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 66,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a visitor abandons a shopping cart.",
@@ -116,7 +116,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 158,
+          [ { "lineno": 168,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a visitor completes a purchase from a shopping cart.",
@@ -260,7 +260,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 132,
+          [ { "lineno": 140,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a visitor adds a product to a shopping cart.",
@@ -319,7 +319,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 112,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a visitor completes a purchase from an abandoned shopping cart.",
@@ -365,7 +365,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 269,
+          [ { "lineno": 288,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a product collection is created.",
@@ -398,7 +398,8 @@
           { "notes":
               [ "Backend events don't work when previewing your site." ] } },
       { "name": "onCollectionDeleted",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -407,7 +408,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 310,
+          [ { "lineno": 333,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a product collection is deleted.",
@@ -421,7 +422,7 @@
                     [ "// Place this code in the events.js file",
                       "// of your site's Backend section.",
                       "",
-                      "export function wixStores_onProductDeleted(event) {",
+                      "export function wixStores_onCollectionDeleted(event) {",
                       "  let collectionId = event.collectionId;",
                       "}",
                       "",
@@ -447,7 +448,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 290,
+          [ { "lineno": 311,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a product collection is updated.",
@@ -482,6 +483,155 @@
         "extra":
           { "notes":
               [ "Backend events don't work when previewing your site." ] } },
+      { "name": "onFulfillmentCreated",
+        "labels":
+          [ "new" ],
+        "nameParams": [],
+        "params":
+          [ { "name": "event",
+              "type": "wix-stores-backend.Events.FulfillmentCreatedEvent",
+              "doc": "Information about a fulfillment that was created." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 458,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An event that fires when an order fulfillment is created.",
+            "description":
+              [ "The `onFulfillmentCreated()` event handler runs when a new fulfillment is created." ],
+            "links": [],
+            "examples":
+              [ { "title": "An event when a fulfillment is created",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentCreated(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "  let trackingNumber = event.trackingInfo.trackingNumber;",
+                      "}",
+                      "",
+                      "/*  Full event object:",
+                      " *  { ",
+                      " *    \"orderId\": \"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\": \"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"dateCreated\": \"2019-12-22T10:41:32.487Z\",",
+                      " *    \"buyerInfo\": {",
+                      " *      \"id\": \"a158c93a-2f1e-4e86-a38f-475931a337ce\",",
+                      " *      \"identityType\": \"CONTACT\",",
+                      " *      \"firstName\": \"John\",",
+                      " *      \"lastName\":\"Doe\",",
+                      " *      \"phone\":\"5555555555\",",
+                      " *      \"email\":\"john@doe.com\"",
+                      " *    },",
+                      " *    \"fulfillmentStatus\":\"FULFILLED\",",
+                      " *    \"trackingInfo\":{ ",
+                      " *      \"trackingNumber\":\"1234\",",
+                      " *      \"shippingProvider\":\"Some Provider\",",
+                      " *      \"trackingLink\":\"https://www.someprovider.com&trackingnumber=1234\"",
+                      " *    }",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          { "notes":
+              [ "Backend events don't work when previewing your site." ] } },
+      { "name": "onFulfillmentDeleted",
+        "labels":
+          [ "new" ],
+        "nameParams": [],
+        "params":
+          [ { "name": "event",
+              "type": "wix-stores-backend.Events.FulfillmentDeletedEvent",
+              "doc": "Information about a fulfillment that was deleted." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 517,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An event that fires when an order fulfillment is deleted.",
+            "description":
+              [ "The `onFulfillmentDeleted()` event handler runs when a new fulfillment is deleted." ],
+            "links": [],
+            "examples":
+              [ { "title": "An event when a fulfillment is deleted",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentDeleted(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "}",
+                      "",
+                      "/*  Full event object: ",
+                      " *  { ",
+                      " *    \"orderId\":\"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\":\"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"fulfillmentStatus\":\"NOT_FULFILLED\"",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          { "notes":
+              [ "Backend events don't work when previewing your site." ] } },
+      { "name": "onFulfillmentUpdated",
+        "labels":
+          [ "new" ],
+        "nameParams": [],
+        "params":
+          [ { "name": "event",
+              "type": "wix-stores-backend.Events.FulfillmentUpdatedEvent",
+              "doc": "Information about a fulfillment that was updated." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 496,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An event that fires when an order fulfillment is updated.",
+            "description":
+              [ "The `onFulfillmentUpdated()` event handler runs when a fulfillment is updated." ],
+            "links": [],
+            "examples":
+              [ { "title": "An event when a fulfillment is updated",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentUpdated(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "  let trackingNumber = event.trackingInfo.trackingNumber;",
+                      "}",
+                      "",
+                      "/*  Full event object: ",
+                      " *  { ",
+                      " *    \"orderId\":\"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\":\"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"trackingInfo\":{ ",
+                      " *      \"trackingNumber\":\"5678\",",
+                      " *      \"shippingProvider\":\"Some other provider\",",
+                      " *      \"trackingLink\":\"https://www.someprovider.com&trackingnumber=5678\"",
+                      " *    }",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          { "notes":
+              [ "Backend events don't work when previewing your site." ] } },
       { "name": "onInventoryItemUpdated",
         "labels": [],
         "nameParams": [],
@@ -492,7 +642,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 366,
+          [ { "lineno": 395,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when an inventory item's information is updated.",
@@ -534,7 +684,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 388,
+          [ { "lineno": 418,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when the inventory information of a product variant is updated.",
@@ -590,7 +740,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 31,
+          [ { "lineno": 32,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a new order is placed.",
@@ -655,7 +805,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 190,
+          [ { "lineno": 202,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a product is created.",
@@ -714,7 +864,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 250,
+          [ { "lineno": 267,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a product is deleted.",
@@ -754,7 +904,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 230,
+          [ { "lineno": 245,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when a product is updated.",
@@ -809,7 +959,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 329,
+          [ { "lineno": 354,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when variant information for a product is updated.",
@@ -863,7 +1013,7 @@
   "messages":
     [ { "name": "CartAbandonedEvent",
         "locations":
-          [ { "lineno": 81,
+          [ { "lineno": 85,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a shopping cart that was abandoned.",
@@ -939,7 +1089,7 @@
         "labels": [] },
       { "name": "CartCompletedEvent",
         "locations":
-          [ { "lineno": 172,
+          [ { "lineno": 183,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a shopping cart that was completed.",
@@ -1104,7 +1254,7 @@
         "labels": [] },
       { "name": "CartCreatedEvent",
         "locations":
-          [ { "lineno": 145,
+          [ { "lineno": 154,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a shopping cart that was created.",
@@ -1172,7 +1322,7 @@
         "labels": [] },
       { "name": "CartRecoveredEvent",
         "locations":
-          [ { "lineno": 121,
+          [ { "lineno": 128,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a shopping cart that was recovered.",
@@ -1219,7 +1369,7 @@
         "labels": [] },
       { "name": "CartTotals",
         "locations":
-          [ { "lineno": 96,
+          [ { "lineno": 101,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing the totals of a shopping cart.",
@@ -1280,7 +1430,7 @@
         "labels": [] },
       { "name": "CollectionCreatedEvent",
         "locations":
-          [ { "lineno": 282,
+          [ { "lineno": 302,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product collection that was created.",
@@ -1321,7 +1471,7 @@
         "labels": [] },
       { "name": "CollectionDeletedEvent",
         "locations":
-          [ { "lineno": 323,
+          [ { "lineno": 347,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product collection that was deleted.",
@@ -1332,7 +1482,7 @@
                     [ "// Place this code in the events.js file",
                       "// of your site's Backend section.",
                       "",
-                      "export function wixStores_onProductDeleted(event) {",
+                      "export function wixStores_onCollectionDeleted(event) {",
                       "  let collectionId = event.collectionId;",
                       "}",
                       "",
@@ -1351,10 +1501,11 @@
               "doc": "ID of the delete collection." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "CollectionUpdatedEvent",
         "locations":
-          [ { "lineno": 303,
+          [ { "lineno": 325,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product collection that was updated.",
@@ -1396,9 +1547,90 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "FulfillmentCreatedEvent",
+        "locations":
+          [ { "lineno": 471,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An object representing fulfillment information that was created.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "orderId",
+              "type": "string",
+              "doc": "ID of the order the fulfillment was created for." },
+            { "name": "fulfillmentId",
+              "type": "string",
+              "doc": "ID of the fulfillment that was created." },
+            { "name": "dateCreated",
+              "type": "Date",
+              "doc": "Date the fulfillment was created." },
+            { "name": "buyerInfo",
+              "type": "wix-stores-backend.BuyerInfo",
+              "doc": "Information about the order's buyer." },
+            { "name": "fulfillmentStatus",
+              "type": "string",
+              "doc": "Status of the fulfillment.\n One of:\n\n + `\"FULFILLED\"`\n + `\"NOT_FULFILLED\"`\n + `\"PARTIALLY_FULFILLED\"`\n + `\"CANCELED\"`" },
+            { "name": "trackingInfo",
+              "type": "wix-stores-backend.Events.TrackingInfo",
+              "doc": "<Placeholder text>" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "FulfillmentDeletedEvent",
+        "locations":
+          [ { "lineno": 530,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An object representing fulfillment information that was deleted.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "orderId",
+              "type": "string",
+              "doc": "ID of the order the fulfillment was deleted from." },
+            { "name": "fulfillmentId",
+              "type": "string",
+              "doc": "ID of the fulfillment that was deleted." },
+            { "name": "fulfillmentStatus",
+              "type": "string",
+              "doc": "Status of the fulfillment.\n One of:\n\n + `\"FULFILLED\"`\n + `\"NOT_FULFILLED\"`\n + `\"PARTIALLY_FULFILLED\"`\n + `\"CANCELED\"`" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "FulfillmentUpdatedEvent",
+        "locations":
+          [ { "lineno": 509,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An object representing fulfillment information that was updated.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "orderId",
+              "type": "string",
+              "doc": "ID of the order the fulfillment was updated for." },
+            { "name": "fulfillmentId",
+              "type": "string",
+              "doc": "ID of the fulfillment that was updated." },
+            { "name": "trackingInfo",
+              "type": "wix-stores-backend.Events.TrackingInfo",
+              "doc": "<Placeholder text>" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "InventoryItemUpdatedEvent",
         "locations":
-          [ { "lineno": 379,
+          [ { "lineno": 409,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing an inventory item that was updated.",
@@ -1430,7 +1662,7 @@
               "doc": "ID of the inventory item." },
             { "name": "externalId",
               "type": "string",
-              "doc": "External ID of the inventory item. For example, the product ID for\n inventory items which are store products." },
+              "doc": "External ID of the inventory item. For example, the product ID for\\n inventory items which are store products." },
             { "name": "trackInventory",
               "type": "boolean",
               "doc": "Whether the item's inventory is tracked." } ],
@@ -1440,7 +1672,7 @@
           [ "changed" ] },
       { "name": "InventoryVariantUpdatedEvent",
         "locations":
-          [ { "lineno": 401,
+          [ { "lineno": 432,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing product variant information that was updated.",
@@ -1486,7 +1718,7 @@
               "doc": "ID of the inventory item." },
             { "name": "externalId",
               "type": "string",
-              "doc": "External ID of the inventory item. For example, the product ID for\n inventory items which are store products." },
+              "doc": "External ID of the inventory item. For example, the product ID for\\n inventory items which are store products." },
             { "name": "variants",
               "type":
                 { "name": "Array",
@@ -1499,7 +1731,7 @@
           [ "changed" ] },
       { "name": "MediaItem",
         "locations":
-          [ { "lineno": 203,
+          [ { "lineno": 216,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a media item.",
@@ -1563,7 +1795,7 @@
         "labels": [] },
       { "name": "NewOrderEvent",
         "locations":
-          [ { "lineno": 47,
+          [ { "lineno": 49,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a new order from a store.",
@@ -1643,9 +1875,63 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "ProductChoices",
+        "locations":
+          [ { "lineno": 385,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An object representing the specific choices from the product's options.",
+            "links": [],
+            "examples":
+              [ { "title": "An event when a product variant information is updated",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onVariantsUpdated(event) {",
+                      "  let productId = event.productId;",
+                      "  let firstVariant = event.variants[0];",
+                      "}",
+                      "",
+                      "/*  Full event object:",
+                      " *  { ",
+                      " *   \"variants\":[ ",
+                      " *     { ",
+                      " *       \"updatedFields\":[ ",
+                      " *         \"price\"",
+                      " *       ],",
+                      " *       \"choices\":{ ",
+                      " *         \"Color\":\"Red\"",
+                      " *       },",
+                      " *       \"variantId\":\"00000000-0000-0001-0005-970d993bafe9\"",
+                      " *     }, { ",
+                      " *       \"updatedFields\":[ ",
+                      " *         \"sku\"",
+                      " *       ],",
+                      " *       \"choices\":{ ",
+                      " *         \"Color\":\"Blue\"",
+                      " *       },",
+                      " *       \"variantId\":\"00000000-0000-0002-0005-970d993bafe9\"",
+                      " *     }",
+                      " *   ],",
+                      " *   \"productId\":\"1a2d7e83-4bef-31d5-09e1-3326ee271c09\"",
+                      " * }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "optionKey",
+              "type": "string",
+              "doc": "Value of the option. This key name is\n dependent on the option changed in the product. For example, if a product\n has a size option, this key value will be something like \"Size\" and its value\n will be something like \"Large\"." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "ProductCreatedEvent",
         "locations":
-          [ { "lineno": 213,
+          [ { "lineno": 227,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product that was created.",
@@ -1733,7 +2019,7 @@
         "labels": [] },
       { "name": "ProductDeletedEvent",
         "locations":
-          [ { "lineno": 263,
+          [ { "lineno": 281,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product that was deleted.",
@@ -1766,7 +2052,7 @@
         "labels": [] },
       { "name": "ProductUpdatedEvent",
         "locations":
-          [ { "lineno": 243,
+          [ { "lineno": 259,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product that was updated.",
@@ -1818,9 +2104,33 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "TrackingInfo",
+        "locations":
+          [ { "lineno": 488,
+              "filename": "events.js" } ],
+        "docs":
+          { "summary": "An object containing tracking information.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "trackingNumber",
+              "type": "string",
+              "doc": "Tracking number." },
+            { "name": "shippingProvider",
+              "type": "string",
+              "doc": "Name of the shipping provider." },
+            { "name": "trackingLink",
+              "type": "string",
+              "doc": "Tracking link." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "UpdatedVariant",
         "locations":
-          [ { "lineno": 349,
+          [ { "lineno": 376,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product variants that was updated.",
@@ -1875,14 +2185,15 @@
                     [ "string" ] },
               "doc": "Names of the product variant fields that were updated." },
             { "name": "choices",
-              "type": "wix-stores-backend.ProductChoices",
+              "type": "wix-stores-backend.Events.ProductChoices",
               "doc": "<Placeholder text>" } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "UpdatedVariantInventory",
         "locations":
-          [ { "lineno": 410,
+          [ { "lineno": 441,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing product variant that was updated.",
@@ -1937,7 +2248,7 @@
         "labels": [] },
       { "name": "VariantInventoryValue",
         "locations":
-          [ { "lineno": 418,
+          [ { "lineno": 450,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing a product variant value.",
@@ -1989,7 +2300,7 @@
         "labels": [] },
       { "name": "VariantsUpdatedEvent",
         "locations":
-          [ { "lineno": 342,
+          [ { "lineno": 368,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing product variants that were updated.",
