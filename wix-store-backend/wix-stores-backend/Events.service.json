@@ -398,8 +398,7 @@
           { "notes":
               [ "Backend events don't work when previewing your site." ] } },
       { "name": "onCollectionDeleted",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -484,8 +483,7 @@
           { "notes":
               [ "Backend events don't work when previewing your site." ] } },
       { "name": "onFulfillmentCreated",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -542,8 +540,7 @@
           { "notes":
               [ "Backend events don't work when previewing your site." ] } },
       { "name": "onFulfillmentDeleted",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -552,7 +549,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 517,
+          [ { "lineno": 525,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when an order fulfillment is deleted.",
@@ -585,8 +582,7 @@
           { "notes":
               [ "Backend events don't work when previewing your site." ] } },
       { "name": "onFulfillmentUpdated",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -595,7 +591,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 496,
+          [ { "lineno": 502,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An event that fires when an order fulfillment is updated.",
@@ -1501,8 +1497,7 @@
               "doc": "ID of the delete collection." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "CollectionUpdatedEvent",
         "locations":
           [ { "lineno": 325,
@@ -1553,8 +1548,43 @@
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing fulfillment information that was created.",
-            "links": [],
-            "examples": [],
+            "links":
+              [ "[onFulfillmentCreated( )](#onFulfillmentCreated)" ],
+            "examples":
+              [ { "title": "An event when a fulfillment is created",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentCreated(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "  let trackingNumber = event.trackingInfo.trackingNumber;",
+                      "}",
+                      "",
+                      "/*  Full event object:",
+                      " *  { ",
+                      " *    \"orderId\": \"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\": \"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"dateCreated\": \"2019-12-22T10:41:32.487Z\",",
+                      " *    \"buyerInfo\": {",
+                      " *      \"id\": \"a158c93a-2f1e-4e86-a38f-475931a337ce\",",
+                      " *      \"identityType\": \"CONTACT\",",
+                      " *      \"firstName\": \"John\",",
+                      " *      \"lastName\":\"Doe\",",
+                      " *      \"phone\":\"5555555555\",",
+                      " *      \"email\":\"john@doe.com\"",
+                      " *    },",
+                      " *    \"fulfillmentStatus\":\"FULFILLED\",",
+                      " *    \"trackingInfo\":{ ",
+                      " *      \"trackingNumber\":\"1234\",",
+                      " *      \"shippingProvider\":\"Some Provider\",",
+                      " *      \"trackingLink\":\"https://www.someprovider.com&trackingnumber=1234\"",
+                      " *    }",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "members":
@@ -1575,19 +1605,39 @@
               "doc": "Status of the fulfillment.\n One of:\n\n + `\"FULFILLED\"`\n + `\"NOT_FULFILLED\"`\n + `\"PARTIALLY_FULFILLED\"`\n + `\"CANCELED\"`" },
             { "name": "trackingInfo",
               "type": "wix-stores-backend.Events.TrackingInfo",
-              "doc": "<Placeholder text>" } ],
+              "doc": "Tracking information." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "FulfillmentDeletedEvent",
         "locations":
-          [ { "lineno": 530,
+          [ { "lineno": 538,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing fulfillment information that was deleted.",
-            "links": [],
-            "examples": [],
+            "links":
+              [ "[onFulfillmentDeleted( )](#onFulfillmentDeleted)" ],
+            "examples":
+              [ { "title": "An event when a fulfillment is deleted",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentDeleted(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "}",
+                      "",
+                      "/*  Full event object: ",
+                      " *  { ",
+                      " *    \"orderId\":\"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\":\"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"fulfillmentStatus\":\"NOT_FULFILLED\"",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "members":
@@ -1603,15 +1653,40 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "FulfillmentUpdatedEvent",
         "locations":
-          [ { "lineno": 509,
+          [ { "lineno": 515,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object representing fulfillment information that was updated.",
-            "links": [],
-            "examples": [],
+            "links":
+              [ "[onFulfillmentUpdate( )](#onFulfillmentUpdated)" ],
+            "examples":
+              [ { "title": "An event when a fulfillment is updated",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentUpdated(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "  let trackingNumber = event.trackingInfo.trackingNumber;",
+                      "}",
+                      "",
+                      "/*  Full event object: ",
+                      " *  { ",
+                      " *    \"orderId\":\"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\":\"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"trackingInfo\":{ ",
+                      " *      \"trackingNumber\":\"5678\",",
+                      " *      \"shippingProvider\":\"Some other provider\",",
+                      " *      \"trackingLink\":\"https://www.someprovider.com&trackingnumber=5678\"",
+                      " *    }",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "members":
@@ -1623,11 +1698,11 @@
               "doc": "ID of the fulfillment that was updated." },
             { "name": "trackingInfo",
               "type": "wix-stores-backend.Events.TrackingInfo",
-              "doc": "<Placeholder text>" } ],
+              "doc": "Tracking information." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "InventoryItemUpdatedEvent",
         "locations":
           [ { "lineno": 409,
@@ -1668,8 +1743,7 @@
               "doc": "Whether the item's inventory is tracked." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "InventoryVariantUpdatedEvent",
         "locations":
           [ { "lineno": 432,
@@ -1727,8 +1801,7 @@
               "doc": "List of variants that were updated." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "MediaItem",
         "locations":
           [ { "lineno": 216,
@@ -1927,8 +2000,7 @@
               "doc": "Value of the option. This key name is\n dependent on the option changed in the product. For example, if a product\n has a size option, this key value will be something like \"Size\" and its value\n will be something like \"Large\"." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "ProductCreatedEvent",
         "locations":
           [ { "lineno": 227,
@@ -2106,12 +2178,72 @@
         "labels": [] },
       { "name": "TrackingInfo",
         "locations":
-          [ { "lineno": 488,
+          [ { "lineno": 490,
               "filename": "events.js" } ],
         "docs":
           { "summary": "An object containing tracking information.",
-            "links": [],
-            "examples": [],
+            "links":
+              [ "[onFulfillmentCreated( )](#onFulfillmentCreated)",
+                "[onFulfillmentUpdated( )](#onFulfillmentUpdated)" ],
+            "examples":
+              [ { "title": "An event when a fulfillment is created",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentCreated(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "  let trackingNumber = event.trackingInfo.trackingNumber;",
+                      "}",
+                      "",
+                      "/*  Full event object:",
+                      " *  { ",
+                      " *    \"orderId\": \"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\": \"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"dateCreated\": \"2019-12-22T10:41:32.487Z\",",
+                      " *    \"buyerInfo\": {",
+                      " *      \"id\": \"a158c93a-2f1e-4e86-a38f-475931a337ce\",",
+                      " *      \"identityType\": \"CONTACT\",",
+                      " *      \"firstName\": \"John\",",
+                      " *      \"lastName\":\"Doe\",",
+                      " *      \"phone\":\"5555555555\",",
+                      " *      \"email\":\"john@doe.com\"",
+                      " *    },",
+                      " *    \"fulfillmentStatus\":\"FULFILLED\",",
+                      " *    \"trackingInfo\":{ ",
+                      " *      \"trackingNumber\":\"1234\",",
+                      " *      \"shippingProvider\":\"Some Provider\",",
+                      " *      \"trackingLink\":\"https://www.someprovider.com&trackingnumber=1234\"",
+                      " *    }",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } },
+                { "title": "An event when a fulfillment is updated",
+                  "body":
+                    [ "// Place this code in the events.js file",
+                      "// of your site's Backend section.",
+                      "",
+                      "export function wixStores_onFulfillmentUpdated(event) {",
+                      "  let orderId = event.orderId;",
+                      "  let fulfillmentId = event.fulfillmentId;",
+                      "  let trackingNumber = event.trackingInfo.trackingNumber;",
+                      "}",
+                      "",
+                      "/*  Full event object: ",
+                      " *  { ",
+                      " *    \"orderId\":\"2c6ce6e5-8b40-4d2c-882a-edeb30fb3ec2\",",
+                      " *    \"fulfillmentId\":\"4afd9175-b3c5-41b9-b3cc-e65b7544e84b\",",
+                      " *    \"trackingInfo\":{ ",
+                      " *      \"trackingNumber\":\"5678\",",
+                      " *      \"shippingProvider\":\"Some other provider\",",
+                      " *      \"trackingLink\":\"https://www.someprovider.com&trackingnumber=5678\"",
+                      " *    }",
+                      " *  }",
+                      " */" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "members":
@@ -2127,7 +2259,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "UpdatedVariant",
         "locations":
           [ { "lineno": 376,
@@ -2189,8 +2321,7 @@
               "doc": "<Placeholder text>" } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "UpdatedVariantInventory",
         "locations":
           [ { "lineno": 441,
