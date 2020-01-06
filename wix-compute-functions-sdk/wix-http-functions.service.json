@@ -1,6 +1,7 @@
 { "name": "wix-http-functions",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "http-functions.js" },
@@ -242,7 +243,8 @@
         "extra":
           {  } },
       { "name": "delete",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "request",
@@ -251,7 +253,7 @@
         "ret":
           { "type": "wix-http-functions.WixHttpFunctionResponse" },
         "locations":
-          [ { "lineno": 267,
+          [ { "lineno": 283,
               "filename": "http-functions.js" } ],
         "docs":
           { "summary": "A function that responds to requests made with the HTTP DELETE method.",
@@ -347,7 +349,7 @@
               {  } },
         "extra":
           { "notes":
-              [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
+              [ "HTTP functions can be accessed by anyone. To ensure that only your intended\n users are able to call an HTTP function, add an authorization \n mechanism to the function implementation. \n\n You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
       { "name": "forbidden",
         "labels": [],
         "nameParams": [],
@@ -413,7 +415,8 @@
         "extra":
           {  } },
       { "name": "get",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "request",
@@ -422,7 +425,7 @@
         "ret":
           { "type": "wix-http-functions.WixHttpFunctionResponse" },
         "locations":
-          [ { "lineno": 114,
+          [ { "lineno": 118,
               "filename": "http-functions.js" } ],
         "docs":
           { "summary": "A function that responds to requests made with the HTTP GET method.",
@@ -530,7 +533,7 @@
               {  } },
         "extra":
           { "notes":
-              [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
+              [ "HTTP functions can be accessed by anyone. To ensure that only your intended\n users are able to call an HTTP function, add an authorization \n mechanism to the function implementation. \n\n You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
       { "name": "notFound",
         "labels": [],
         "nameParams": [],
@@ -667,7 +670,7 @@
         "ret":
           { "type": "wix-http-functions.WixHttpFunctionResponse" },
         "locations":
-          [ { "lineno": 317,
+          [ { "lineno": 337,
               "filename": "http-functions.js" } ],
         "docs":
           { "summary": "A function that responds to requests made with the HTTP OPTIONS method.",
@@ -764,7 +767,8 @@
           { "notes":
               [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
       { "name": "post",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "request",
@@ -773,7 +777,7 @@
         "ret":
           { "type": "wix-http-functions.WixHttpFunctionResponse" },
         "locations":
-          [ { "lineno": 165,
+          [ { "lineno": 173,
               "filename": "http-functions.js" } ],
         "docs":
           { "summary": "A function that responds to requests made with the HTTP POST method.",
@@ -875,9 +879,10 @@
               {  } },
         "extra":
           { "notes":
-              [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
+              [ "HTTP functions can be accessed by anyone. To ensure that only your intended\n users are able to call an HTTP function, add an authorization \n mechanism to the function implementation. \n\n You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
       { "name": "put",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "request",
@@ -886,7 +891,7 @@
         "ret":
           { "type": "wix-http-functions.WixHttpFunctionResponse" },
         "locations":
-          [ { "lineno": 215,
+          [ { "lineno": 227,
               "filename": "http-functions.js" } ],
         "docs":
           { "summary": "A function that responds to requests made with the HTTP PUT method.",
@@ -989,7 +994,7 @@
               {  } },
         "extra":
           { "notes":
-              [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
+              [ "HTTP functions can be accessed by anyone. To ensure that only your intended\n users are able to call an HTTP function, add an authorization \n mechanism to the function implementation. \n\n You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } },
       { "name": "response",
         "labels": [],
         "nameParams": [],
@@ -1109,7 +1114,8 @@
         "extra":
           {  } },
       { "name": "use",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "request",
@@ -1118,7 +1124,7 @@
         "ret":
           { "type": "wix-http-functions.WixHttpFunctionResponse" },
         "locations":
-          [ { "lineno": 372,
+          [ { "lineno": 392,
               "filename": "http-functions.js" } ],
         "docs":
           { "summary": "A function that responds to requests made with any HTTP method.",
@@ -1181,7 +1187,7 @@
               {  } },
         "extra":
           { "notes":
-              [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } } ],
+              [ "HTTP functions can be accessed by anyone. To ensure that only your intended\n users are able to call an HTTP function, add an authorization \n mechanism to the function implementation. \n\n You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] } } ],
   "callbacks": [],
   "messages":
     [ { "name": "WixHttpFunctionResponseOptions",
@@ -1214,7 +1220,7 @@
         "labels": [] } ],
   "extra":
     { "notes":
-        [ "You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] },
+        [ "HTTP functions can be accessed by anyone. To ensure that only your intended\n users are able to call an HTTP function, add an authorization \n mechanism to the function implementation. \n\n You must publish your site at least once before using both the testing and\n production endpoints. After that, you save your site for changes you make to\n testing endpoints to take effect and you publish your site for changes you\n make to the production endpoints to take effect." ] },
   "menuSections": "APIs",
   "relatedContent":
     [ { "icon": "article",
