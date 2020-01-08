@@ -1,7 +1,6 @@
 { "name": "wix-bookings",
   "mixes": [],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 5,
       "filename": "bookings.js" },
@@ -282,8 +281,7 @@
           { "notes":
               [ "You can checkout bookings for 1-on-1 Sessions (Appointments) from any type of Wix account.\n To checkout bookings for Ongoing Sessions (Classes) or a Set of Sessions (Courses) you need to\n <a href=\"https://support.wix.com/en/article/upgrading-wix-bookings\" target=\"_blank\">upgrade to a Business Premium Plan</a>." ] } },
       { "name": "getCheckoutOptions",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "slotId",
@@ -900,8 +898,7 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "FormField",
         "locations":
           [ { "lineno": 118,
@@ -1079,8 +1076,7 @@
               "doc": "Type of the payment. Valid options are: \n\n  + `\"wixPay_Online\"` for online collections\n  + `\"wixPay_Offline\"` for offline collections\n  + `\"package\"` for a package-type paid plan\n  + `\"membership\"` for a membership-type paid plan" } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "ServiceAvailability",
         "locations":
           [ { "lineno": 85,
