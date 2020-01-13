@@ -99,7 +99,7 @@
         "set": false,
         "type": "$w.Style",
         "locations":
-          [ { "lineno": 211,
+          [ { "lineno": 212,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Gets an object containing information about the selection tags' styles.",
@@ -133,19 +133,80 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels": [],
-        "get": false,
+        "labels":
+          [ "changed" ],
+        "get": true,
         "set": true,
-        "type":
-          { "name": "Array",
-            "typeParams":
-              [ "string" ] },
+        "type": "Array",
         "locations":
-          [ { "lineno": 189,
+          [ { "lineno": 160,
+              "filename": "SelectionTagsList.js" },
+            { "lineno": 190,
               "filename": "SelectionTagsList.js" } ],
         "docs":
-          { "links": [],
-            "examples": [],
+          { "summary": "Sets or gets the values of the selected options.",
+            "description":
+              [ "Setting the `value` property sets the options with those values to be the selected options.",
+                " User must set the `value` property to values that exist in the options list.",
+                "",
+                " To reset the selection tags to have no options selected, set the `value` property to an empty array, `null` or `undefined`.",
+                "",
+                " Getting the `value` property returns the values of the currently selected options.",
+                " If no value is selected, the `value` property returns an empty array." ],
+            "links": [],
+            "examples":
+              [ { "title": "Get the value of selection tags",
+                  "body":
+                    [ "let myValue = $w(\"#mySelectionTags\").value;  // [\"value1\", \"value2\"]" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the value of selection tags",
+                  "body":
+                    [ "$w(\"#mySelectionTags\").value = [\"value1\", \"value2\"];" ],
+                  "extra":
+                    {  } },
+                { "title": "Filter page content using selection tags",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// ..",
+                      "",
+                      "export function mySelectionTags_change(event) {",
+                      "",
+                      "    let selectedTags = $w(\"#mySelectionTags\").value;",
+                      "    // Define an empty filter",
+                      "    let filter = wixData.filter();",
+                      "",
+                      "    if (selectedTags) {",
+                      "        // Build a filter that only includes items with all selected tags",
+                      "        filter = filter.hasAll(\"tags\", selectedTags);",
+                      "    }",
+                      "    // Filter the dataset",
+                      "    $w('#myDataset').setFilter(filter);",
+                      "}" ],
+                  "extra":
+                    { "description": "This example demonstrates how to filter a dataset based on tags selected by site visitors. If no tags are selected we use an empty filter, which includes all content. If one or more tags are selected, the dataset is filtered to only include items that contain all selected tags. The filtered content is displayed in the repeater or another element connected to the dataset." } },
+                { "title": "Filter page content using selection tags and update the URL",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// ..",
+                      "",
+                      "export function mySelectionTags_change(event) {",
+                      "",
+                      "    let selectedTags = $w(\"#mySelectionTags\").value;",
+                      "    // Define an empty filter",
+                      "    let filter = wixData.filter();",
+                      "",
+                      "    if (selectedTags) {",
+                      "        // Build a filter that only includes items with all selected tags",
+                      "        filter = filter.hasAll(\"tags\", selectedTags);",
+                      "    }",
+                      "    // Filter the dataset",
+                      "    $w('#myDataset').setFilter(filter);",
+                      "}" ],
+                  "extra":
+                    { "description": "This example demonstrates how to filter a dataset based on selected tags, and then update the page URL to reflect the filtered content. We join the tags using a dash as a separator, and add them to the URL as a query parameter." } } ],
             "extra":
               {  } },
         "extra":
