@@ -1,0 +1,199 @@
+{ "name": "SelectionTags",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.FormElement",
+      "$w.HiddenCollapsedMixin",
+      "$w.DisabledMixin",
+      "$w.FocusMixin",
+      "$w.StyleMixin",
+      "$w.RequiredMixin" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 38,
+      "filename": "SelectionTagsList.js" },
+  "docs":
+    { "summary": "Selection tags are used for selecting any number from a list of given options.",
+      "description":
+        [ "Selection tags consist of multiple options, where each option is displayed in a tag. ",
+          "",
+          "Selection tags are commonly used as a controller to filter page content." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "options",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.SelectionTags.Option" ] },
+        "defaultValue": "An empty array",
+        "locations":
+          [ { "lineno": 69,
+              "filename": "SelectionTagsList.js" },
+            { "lineno": 101,
+              "filename": "SelectionTagsList.js" } ],
+        "docs":
+          { "summary": "Sets or gets a list of items which will be rendered as tags.",
+            "description":
+              [ "Setting the `options` property sets all the [options](#Option) available to a site visitor.",
+                "",
+                " Getting the `options` property returns the current list of options available to a site visitor.",
+                "",
+                "Each option contains a label, which is what the site visitor sees, ",
+                "and a value, which is used in code and stored in your collections.",
+                "",
+                "You cannot modify the `options` data array in-place. To add, change, or remove",
+                "individual selection tag options:",
+                "",
+                "   1. Store the value of the `options` property in a variable.",
+                "   1. Make changes to the array.",
+                "   1. Reset the `options` property with the modified array." ],
+            "links": [],
+            "examples":
+              [ { "title": "Get the options of selection tags",
+                  "body":
+                    [ "let selectionTagsOptions = $w(\"#mySelectionTags\").options;",
+                      "",
+                      "let firstLabel = selectionTagsOptions[0].label;   // \"First Label\"",
+                      "let firstValue = selectionTagsOptions[0].value;   // \"first_value\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the options of selection tags",
+                  "body":
+                    [ "$w(\"#mySelectionTags\").options = [",
+                      "    { ‘label’: ‘Onion’, ‘value’: ‘onion’},",
+                      "    { ‘label’: ‘Tomatoes’, ‘value’: ‘tomatoes’},",
+                      "    { ‘label’: ‘Extra Cheese’, ‘value’: ‘cheese’}",
+                      "",
+                      "];" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "selectedIndices",
+        "labels": [],
+        "get": false,
+        "set": true,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "number" ] },
+        "locations":
+          [ { "lineno": 146,
+              "filename": "SelectionTagsList.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "style",
+        "labels": [],
+        "get": true,
+        "set": false,
+        "type": "$w.Style",
+        "locations":
+          [ { "lineno": 212,
+              "filename": "SelectionTagsList.js" } ],
+        "docs":
+          { "summary": "Gets an object containing information about the selection tags' styles.",
+            "description":
+              [ "The following styles can be used with selection tags:",
+                "",
+                " + [`backgroundColor`]($w.Style.html#backgroundColor)",
+                " + [`borderColor`]($w.Style.html#borderColor)",
+                " + [`borderRadius`]($w.Style.html#borderRadius)",
+                " + [`borderWidth`]($w.Style.html#borderWidth)",
+                " + [`color`]($w.Style.html#color)",
+                "",
+                "",
+                " Getting or setting styles gets or sets the styles of the",
+                " selection tags' regular state. It does not set the styles of the selection tags' hover,",
+                " focus, error, or disabled states." ],
+            "links": [],
+            "examples":
+              [ { "title": "Set the background color",
+                  "body":
+                    [ "$w(\"#myElement\").style.backgroundColor = \"rgba(255,0,0,0.5)\";" ],
+                  "extra":
+                    {  } },
+                { "title": "Get the background color",
+                  "body":
+                    [ "let bgColor = $w(\"#myElement\").style.backgroundColor;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "value",
+        "labels": [],
+        "get": false,
+        "set": true,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "string" ] },
+        "locations":
+          [ { "lineno": 190,
+              "filename": "SelectionTagsList.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations": [],
+  "callbacks": [],
+  "messages":
+    [ { "name": "Option",
+        "locations":
+          [ { "lineno": 58,
+              "filename": "SelectionTagsList.js" } ],
+        "docs":
+          { "summary": "An object used by the [`options`](#options) property that contains the attributes of the selection tag item.",
+            "links":
+              [ "[options](#options)",
+                "[value](#value)" ],
+            "examples":
+              [ { "title": "Get the options of selection tags",
+                  "body":
+                    [ "let selectionTagsOptions = $w(\"#mySelectionTags\").options;",
+                      "",
+                      "let firstLabel = selectionTagsOptions[0].label;   // \"First Label\"",
+                      "let firstValue = selectionTagsOptions[0].value;   // \"first_value\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the options of selection tags",
+                  "body":
+                    [ "$w(\"#mySelectionTags\").options = [",
+                      "    { ‘label’: ‘Onion’, ‘value’: ‘onion’},",
+                      "    { ‘label’: ‘Tomatoes’, ‘value’: ‘tomatoes’},",
+                      "    { ‘label’: ‘Extra Cheese’, ‘value’: ‘cheese’}",
+                      "",
+                      "];" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "value",
+              "type": "string",
+              "doc": "The value of the selection tag option. This is what you use in code and is what is stored in your collections." },
+            { "name": "label",
+              "type": "string",
+              "doc": "The label of the selection tag option. This is what a site visitor sees." } ],
+        "extra":
+          {  },
+        "labels": [] } ],
+  "extra":
+    {  } }
