@@ -76,19 +76,36 @@
         "extra":
           {  } },
       { "name": "selectedIndices",
-        "labels": [],
-        "get": false,
+        "labels":
+          [ "changed" ],
+        "get": true,
         "set": true,
-        "type":
-          { "name": "Array",
-            "typeParams":
-              [ "number" ] },
+        "type": "Array",
         "locations":
-          [ { "lineno": 144,
+          [ { "lineno": 120,
+              "filename": "SelectionTagsList.js" },
+            { "lineno": 145,
               "filename": "SelectionTagsList.js" } ],
         "docs":
-          { "links": [],
-            "examples": [],
+          { "summary": "Sets or gets the indices of the selected options.",
+            "description":
+              [ "Setting the `selectedIndices` property sets the options at each specified index to be a selected option.",
+                " To reset the selection tags to have no option selected, set the `selectedIndices` property to an empty array, null or undefined.",
+                "",
+                " Getting the `selectedIndices` property returns an array of the indices of all selected options.",
+                " If no value is selected, the `selectedIndices` property returns an empty array." ],
+            "links": [],
+            "examples":
+              [ { "title": "Get the selected indices of selection tags",
+                  "body":
+                    [ "let selectedIndices = $w(\"#mySelectionTags\").selectedIndices; // [0,2]" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the selected indices of selection tags",
+                  "body":
+                    [ "$w(\"#mySelectedTags\").selectedIndices = [0,2];" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
@@ -99,7 +116,7 @@
         "set": false,
         "type": "$w.Style",
         "locations":
-          [ { "lineno": 212,
+          [ { "lineno": 213,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Gets an object containing information about the selection tags' styles.",
@@ -133,15 +150,14 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 160,
+          [ { "lineno": 161,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 190,
+            { "lineno": 191,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the values of the selected options.",
