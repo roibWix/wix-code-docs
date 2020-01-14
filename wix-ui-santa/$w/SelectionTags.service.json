@@ -15,7 +15,7 @@
   "docs":
     { "summary": "Selection tags are used for selecting one or more options.",
       "description":
-        [ "Selection tags (LINK TO KB ARTICLE WHEN READY) let your site visitors choose from a set of options, each displayed as a tag. ",
+        [ "<a href=\"https://support.wix.com/en/article/selection-tags\" target=\"_blank\">Selection tags</a> let your site visitors choose from a set of options, each displayed as a tag. ",
           "",
           "![Selection Tags](images/selection_tags2.png \"Selection Tags\")",
           "",
@@ -26,8 +26,7 @@
         {  } },
   "properties":
     [ { "name": "options",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type":
@@ -89,8 +88,7 @@
         "extra":
           {  } },
       { "name": "selectedIndices",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "Array",
@@ -163,8 +161,7 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "Array",
