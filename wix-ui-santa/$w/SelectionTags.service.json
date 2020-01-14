@@ -16,7 +16,9 @@
     { "summary": "Selection tags are used for selecting one or more options.",
       "description":
         [ "Selection tags (LINK TO KB ARTICLE WHEN READY) let your site visitors choose from a set of options, each displayed as a tag. ",
+          "",
           "![Selection Tags](images/selection_tags.png \"Selection Tags\")",
+          "",
           "Selection tags are commonly used as a controller to filter page content." ],
       "links": [],
       "examples": [],
@@ -33,9 +35,9 @@
               [ "$w.SelectionTags.Option" ] },
         "defaultValue": "An empty array",
         "locations":
-          [ { "lineno": 69,
+          [ { "lineno": 71,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 101,
+            { "lineno": 103,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets a list of items which will be rendered as tags.",
@@ -83,9 +85,9 @@
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 122,
+          [ { "lineno": 124,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 147,
+            { "lineno": 149,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the indices of the selected options.",
@@ -112,13 +114,12 @@
         "extra":
           {  } },
       { "name": "style",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type": "$w.Style",
         "locations":
-          [ { "lineno": 216,
+          [ { "lineno": 218,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Gets an object containing information about the selection tags' styles.",
@@ -157,9 +158,9 @@
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 163,
+          [ { "lineno": 165,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 194,
+            { "lineno": 196,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the values of the selected options.",
@@ -241,7 +242,7 @@
   "messages":
     [ { "name": "Option",
         "locations":
-          [ { "lineno": 58,
+          [ { "lineno": 60,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "An object used by the [`options`](#options) property that contains the attributes of the selection tag item.",
