@@ -4,7 +4,7 @@
     [ "$w.FormElement",
       "$w.HiddenCollapsedMixin",
       "$w.DisabledMixin",
-      "$w.FocusMixin",
+      "$w.ClickableMixin",
       "$w.StyleMixin",
       "$w.RequiredMixin" ],
   "labels":
@@ -13,9 +13,11 @@
     { "lineno": 38,
       "filename": "SelectionTagsList.js" },
   "docs":
-    { "summary": "Selection tags are used for selecting any number from a list of given options.",
+    { "summary": "Selection tags are used for selecting one or more options.",
       "description":
-        [ "Selection tags consist of multiple options, where each option is displayed in a tag. Selection tags are commonly used as a controller to filter page content." ],
+        [ "Selection tags (LINK TO KB ARTICLE WHEN READY) let your site visitors choose from a set of options, each displayed as a tag. ",
+          "![Selection Tags](images/selection_tags.png \"Selection Tags\")",
+          "Selection tags are commonly used as a controller to filter page content." ],
       "links": [],
       "examples": [],
       "extra":
@@ -31,9 +33,9 @@
               [ "$w.SelectionTags.Option" ] },
         "defaultValue": "An empty array",
         "locations":
-          [ { "lineno": 67,
+          [ { "lineno": 69,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 99,
+            { "lineno": 101,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets a list of items which will be rendered as tags.",
@@ -81,9 +83,9 @@
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 120,
+          [ { "lineno": 122,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 145,
+            { "lineno": 147,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the indices of the selected options.",
@@ -110,12 +112,13 @@
         "extra":
           {  } },
       { "name": "style",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "$w.Style",
         "locations":
-          [ { "lineno": 214,
+          [ { "lineno": 216,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Gets an object containing information about the selection tags' styles.",
@@ -131,7 +134,7 @@
                 "",
                 " Getting or setting styles gets or sets the styles of the",
                 " selection tags' regular state. It does not set the styles of the selection tags' hover,",
-                " focus, error, or disabled states." ],
+                " selected, error, or disabled states." ],
             "links": [],
             "examples":
               [ { "title": "Set the background color",
@@ -149,15 +152,14 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 161,
+          [ { "lineno": 163,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 192,
+            { "lineno": 194,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the values of the selected options.",
@@ -239,7 +241,7 @@
   "messages":
     [ { "name": "Option",
         "locations":
-          [ { "lineno": 56,
+          [ { "lineno": 58,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "An object used by the [`options`](#options) property that contains the attributes of the selection tag item.",
