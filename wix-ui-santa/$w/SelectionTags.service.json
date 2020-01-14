@@ -7,8 +7,7 @@
       "$w.ClickableMixin",
       "$w.StyleMixin",
       "$w.RequiredMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 38,
       "filename": "SelectionTagsList.js" },
