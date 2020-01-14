@@ -7,7 +7,8 @@
       "$w.ClickableMixin",
       "$w.StyleMixin",
       "$w.RequiredMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 38,
       "filename": "SelectionTagsList.js" },
@@ -18,14 +19,15 @@
           "",
           "![Selection Tags](images/selection_tags2.png \"Selection Tags\")",
           "",
-          "Selection tags are commonly used as a controller to filter page content." ],
+          "Selection tags are commonly used to filter page content." ],
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "options",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
@@ -36,7 +38,7 @@
         "locations":
           [ { "lineno": 71,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 103,
+            { "lineno": 105,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets a list of items which will be rendered as tags.",
@@ -73,26 +75,35 @@
                       "",
                       "];" ],
                   "extra":
-                    {  } } ],
+                    {  } },
+                { "title": "Add an option to selection tags",
+                  "body":
+                    [ "let pizzaToppingOptions = $w(\"#pizzaToppingTags\").options;",
+                      "pizzaToppingOptions.push({\"label\": \"Olives\", \"value\": \"olives\"});",
+                      "$w(\"#pizzaToppingTags\").options = pizzaToppingOptions;",
+                      "" ],
+                  "extra":
+                    { "description": "This example retrieves the options of selection tags, adds a new option, and then overwrites the old options." } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "selectedIndices",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 124,
+          [ { "lineno": 126,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 149,
+            { "lineno": 151,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the indices of the selected options.",
             "description":
               [ "Setting the `selectedIndices` property sets the options at each specified index to be a selected option.",
-                " To reset the selection tags to have no option selected, set the `selectedIndices` property to an empty array, null or undefined.",
+                " To reset the selection tags to have no option selected, set the `selectedIndices` property to an empty array, null, or undefined.",
                 "",
                 " Getting the `selectedIndices` property returns an array of the indices of all selected options.",
                 " If no value is selected, the `selectedIndices` property returns an empty array." ],
@@ -118,7 +129,7 @@
         "set": false,
         "type": "$w.Style",
         "locations":
-          [ { "lineno": 218,
+          [ { "lineno": 220,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Gets an object containing information about the selection tags' styles.",
@@ -152,19 +163,20 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "Array",
         "locations":
-          [ { "lineno": 165,
+          [ { "lineno": 167,
               "filename": "SelectionTagsList.js" },
-            { "lineno": 196,
+            { "lineno": 198,
               "filename": "SelectionTagsList.js" } ],
         "docs":
           { "summary": "Sets or gets the values of the selected options.",
             "description":
-              [ "Setting the `value` property sets the options](#options) with those values to be the selected options.",
+              [ "Setting the `value` property sets the [options](#options) with those values to be the selected options.",
                 " The site visitor must set the `value` property to values that exist in the options list.",
                 "",
                 " To reset the selection tags to have no options selected, set the `value` property to an empty array, `null` or `undefined`.",
